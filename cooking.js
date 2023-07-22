@@ -14,10 +14,12 @@ console.log("Hello World")
 
 const data = await response.json();*/
 
-const apiKey = '4bf05c1072d54fa494b77b3a60dbc035';
-
+//const apiKey = '4bf05c1072d54fa494b77b3a60dbc035';
+/*
 async function getAPICall() {
     const endpoint = new URL(`https://api.spoonacular.com/recipes/findByNutrients?minCarbs=10&maxCarbs=50&number=2&apiKey=${apiKey}`);
+
+    console.log(endpoint);
 
     endpoint.searchParams.set("token", "YOUR_TOKEN_HERE");
 
@@ -29,9 +31,20 @@ async function getAPICall() {
 
     console.log('Data: ', data);
 
-    const {id, title} = data[0];
+    const {id, title} = data[0];  id = data[0].id; title = data[0].title 
 
     console.log(id, title);
 }
+*/
+// Filter Options
+async function changeCusine() {
+    const cusineNames = document.getElementById('cusineNames');
+    console.log(cusineNames);
+    console.log('CusineName: ', cusineNames.value);
+    var text = cusineNames.options[cusineNames.selectedIndex].text;
+    console.log('Text: ', text);
+}
 
-getAPICall();
+//getAPICall();
+
+changeCusine();
