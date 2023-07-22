@@ -48,12 +48,36 @@ button
     display: block;
     color: #050404;
     padding: 5px;
+    transition: 0.25s;
 }
 
 .dropdown-content a:hover
 {
     background: #337eb8;
     color: #FFFFFF;
+}
+
+.dropdown-content a .active
+{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: var(--speed) ease;
+}
+
+.dropdown-content a .inactive
+{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--speed) ease;
+}
+
+.dropdown .buttonSelector
+{
+    display: inline-block;
+    min-width: 150px;
+    border-radius: 20%;
 }
 
 img
