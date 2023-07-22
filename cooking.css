@@ -27,3 +27,8 @@
     padding: 5px;
 }
 
+.dropdown-content a:hover
+{
+    background: #337eb8;
+    color: #FFFFFF;
+}

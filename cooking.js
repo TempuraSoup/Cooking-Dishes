@@ -37,14 +37,12 @@ async function getAPICall() {
 }
 */
 // Filter Options
-async function changeCusine() {
-    const cusineNames = document.getElementById('cusineNames');
-    console.log(cusineNames);
-    console.log('CusineName: ', cusineNames.value);
-    var text = cusineNames.options[cusineNames.selectedIndex].text;
-    console.log('Text: ', text);
+async function changeCuisine() {
+    const cusineNames = document.getElementsByClassName('dropdown-content');
+    console.log(cuisineNames);
+    console.log('CuisineName: ', cuisineNames.value);
 }
 
 //getAPICall();
 
-changeCusine();
+changeCuisine();
