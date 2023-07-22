@@ -1,4 +1,4 @@
-//const apiKey = '4bf05c1072d54fa494b77b3a60dbc035';
+// const apiKey = '4bf05c1072d54fa494b77b3a60dbc035';
 /*
 async function getAPICall() {
     const endpoint = new URL(`https://api.spoonacular.com/recipes/findByNutrients?minCarbs=10&maxCarbs=50&number=2&apiKey=${apiKey}`);
@@ -46,7 +46,7 @@ function dropDownHover() {
 
 // Filter Options
 var cuisineName = 'Default';
-async function changeCuisine() {
+function changeCuisine() {
 
     // DropdownMenu Class
     const dropDownMenu = document.getElementsByClassName('dropdown-content')[0];
@@ -75,8 +75,10 @@ async function changeCuisine() {
 
 
 var intolerancesName = 'Default';
-async function changeIntolerances() {
-    const intolerances = document.getElementsByClassName('dropdown-content')[1].getElementsByTagName('a');
+function changeIntolerances() {
+
+    const dropDownMenu = document.getElementsByClassName('dropdown-content')[1];
+    const intolerances = dropDownMenu.getElementsByTagName('a');
     console.log(intolerances);
 
     const intolerancesArr = Array.from(intolerances);
@@ -85,19 +87,39 @@ async function changeIntolerances() {
         name.addEventListener("click", () => {
             intolerancesName = name.getAttribute('value');
         })
+
+        name.onmouseover = () => {
+            show(name.getAttribute('value'));
+        }
     });
 
     console.log('Intolerances: ', intolerancesName);
 
 }
 
-function randomButton()
+async function randomButton()
 {
-    
+    const endpoint = new URL(`https://api.spoonacular.com/recipes/findByNutrients?minCarbs=10&maxCarbs=50&number=2&apiKey=${apiKey}`);
+
+    console.log(endpoint);
+
+    endpoint.searchParams.set("token", "YOUR_TOKEN_HERE");
+
+    const response = await fetch(endpoint);
+
+    const data = await response.json();
+
+    console.log(response);
+
+    console.log('Data: ', data);
+
+    const {id, title, image} = data[0];  id = data[0].id; title = data[0].title 
+
+    console.log(id, title, image);
 }
 
 //getAPICall();
 
 changeCuisine();
-changeIntolerance();
+changeIntolerances();
 dropDownHover();
