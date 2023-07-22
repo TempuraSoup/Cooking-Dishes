@@ -37,12 +37,22 @@ async function getAPICall() {
 }
 */
 // Filter Options
+var cuisineName = 'Default';
 async function changeCuisine() {
-    const cusineNames = document.getElementsByClassName('dropdown-content');
+    const cuisineNames = document.getElementsByClassName('dropdown-content')[0].getElementsByTagName('a');
     console.log(cuisineNames);
-    console.log('CuisineName: ', cuisineNames.value);
-}
 
+    const cusineNamesArr = Array.from(cuisineNames);
+
+    cusineNamesArr.forEach(name => {
+        name.addEventListener("click", () => {
+            cuisineName = name.getAttribute('value');
+        })
+    });
+
+    console.log('Cuisine: ', cuisineName);
+
+}
 //getAPICall();
 
-changeCuisine();
+changeCusine();
