@@ -1,4 +1,27 @@
 
+body
+{
+    background-color:rgb(247, 225, 198);
+}
+
+h1
+{
+    text-align: center;
+    color: #c4972e;
+}
+
+button
+{
+    background-color:#e7e1cb;
+    margin-left: 5%;
+    width: 100%;
+}
+
+.random-button
+{
+    display: inline-block;
+    width: 23%
+}
 
 .dropdown
 {
@@ -31,4 +54,12 @@
 {
     background: #337eb8;
     color: #FFFFFF;
+}
+
+img
+{
+    display: block;
+    width: 30%;
+    margin-left: 65%;
+    margin-top: 10%;
 }

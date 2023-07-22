@@ -4,7 +4,7 @@
 
     <body>
 
-        <h1>Cooking Dishes</h1>
+        <h1>Dishes</h1>
 
         <div class="dropdown">
 
@@ -15,41 +15,49 @@
                 <a value="American">American</a>
                 <a value="British">British</a>
                 <a value="Cajun">Cajun</a>
-                <a value="Cajun">Caribbean</a>
-                <a value="Cajun">European</a>
-                <a value="Cajun">French</a>
-                <a value="Cajun">German</a>
-                <a value="Cajun">Indian</a>
-                <a value="Cajun">Italian</a>
-                <a value="Cajun">Japanese</a>
-                <a value="Cajun">Korean</a>
-                <a value="Cajun">Mediterranean</a>
-                <a value="Cajun">Mexican</a>
-                <a value="Cajun">Thai</a>
-                <a value="Cajun">Vietnamese</a>
+                <a value="Caribbean">Caribbean</a>
+                <a value="European">European</a>
+                <a value="French">French</a>
+                <a value="German">German</a>
+                <a value="Indian">Indian</a>
+                <a value="Italian">Italian</a>
+                <a value="Japanese">Japanese</a>
+                <a value="Korean">Korean</a>
+                <a value="Mediterranean">Mediterranean</a>
+                <a value="Mexican">Mexican</a>
+                <a value="Thai">Thai</a>
+                <a value="Vietnamese">Vietnamese</a>
             </div>
         </div>
 
-        <label for="cusineNames">Choose a cuisine:</label>
-            <select name="cusineNames" id="cusineNames" onchange=changeCuisine()>
-                <option value="African">African</option>
-                <option value="Asian">Asian</option>
-                <option value="American">American</option>
-                <option value="British">British</option>
-                <option value="Cajun">Cajun</option>
-                <option value="Caribbean">Caribbean</option>
-                <option value="European">European</option>
-                <option value="French">French</option>
-                <option value="German">German</option>
-                <option value="Indian">Indian</option>
-                <option value="Italian">Italian</option>
-                <option value="Japanese">Japanese</option>
-                <option value="Korean">Korean</option>
-                <option value="Mediterranean">Mediterranean</option>
-                <option value="Mexican">Mexican</option>
-                <option value="Thai">Thai</option>
-                <option value="Vietnamese">Vietnamese</option>
-            </select>
+
+        <div class="dropdown">
+
+            <button>Choose an intolerances</button>
+            <div class="dropdown-content" onchange=changeCuisine()>
+
+                <a value="None">None</a>
+                <a value="Dairy">Dairy</a>
+                <a value="Egg">Egg</a>
+                <a value="Gluten">Gluten</a>
+                <a value="Grain">Grain</a>
+                <a value="Peanut">Peanut</a>
+                <a value="Seafood">Seafood</a>
+                <a value="Sesame">Sesame</a>
+                <a value="Shellfish">Shellfish</a>
+                <a value="Soy">Soy</a>
+                <a value="Sulfite">Sulfite</a>
+                <a value="Tree Nut">Tree Nut</a>
+                <a value="Wheat">Wheat</a>
+            </div>
+        </div>
+
+        <button class="random-button">Randomize Dish</button>
+
+        <img src="https://www.chefatlarge.in/wp-content/uploads/2017/01/Fotolia_115262838_Subscription_Monthly_M-1024x709.jpg" alt="dishes1">
+        <img src="https://www.tripfore.com/wp-content/uploads/2020/03/Best-Dishes-in-the-World.jpg" alt="dishes2">
+        <img src="https://livelazul.com/wp-content/uploads/2019/08/8096fdc05cdf7ecb315031e8fa74cead-w2880-b0-1024x819.jpg" alt="dishes3">
+
     </body>
 
     <link rel="stylesheet" href="cooking.css">
