@@ -53,6 +53,30 @@ async function changeCuisine() {
     console.log('Cuisine: ', cuisineName);
 
 }
+
+
+var intolerancesName = 'Default';
+async function changeIntolerances() {
+    const intolerances = document.getElementsByClassName('dropdown-content')[1].getElementsByTagName('a');
+    console.log(intolerances);
+
+    const intolerancesArr = Array.from(intolerances);
+
+    intolerancesArr.forEach(name => {
+        name.addEventListener("click", () => {
+            intolerancesName = name.getAttribute('value');
+        })
+    });
+
+    console.log('Intolerances: ', intolerancesName);
+
+}
+
+function randomButton()
+{
+    
+}
+
 //getAPICall();
 
 changeCusine();
