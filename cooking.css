@@ -29,14 +29,25 @@ button
     position: relative;
 }
 
-.dropdown-content
+.dropdown .dropdown-content
 {
     display: none;
     position: absolute;
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0.2);
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.25s;
 }
+
+.dropdown.active .dropdown-content
+{
+    visibility: visible;
+    opacity: 1;
+}
+
 
 .dropdown:hover .dropdown-content
 {
@@ -48,29 +59,15 @@ button
     display: block;
     color: #050404;
     padding: 5px;
-    transition: 0.25s;
+    position: relative;
+    
 }
 
 .dropdown-content a:hover
 {
     background: #337eb8;
     color: #FFFFFF;
-}
-
-.dropdown-content a .active
-{
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: var(--speed) ease;
-}
-
-.dropdown-content a .inactive
-{
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: var(--speed) ease;
+    cursor: pointer;
 }
 
 .dropdown .buttonSelector
