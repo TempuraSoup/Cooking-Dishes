@@ -1,4 +1,4 @@
-// const apiKey = '4bf05c1072d54fa494b77b3a60dbc035';
+const apiKey = '4bf05c1072d54fa494b77b3a60dbc035';
 /*
 async function getAPICall() {
     const endpoint = new URL(`https://api.spoonacular.com/recipes/findByNutrients?minCarbs=10&maxCarbs=50&number=2&apiKey=${apiKey}`);
@@ -99,23 +99,22 @@ function changeIntolerances() {
 
 async function randomButton()
 {
-    const endpoint = new URL(`https://api.spoonacular.com/recipes/findByNutrients?minCarbs=10&maxCarbs=50&number=2&apiKey=${apiKey}`);
+    const url = new URL(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisineName}&intolerances=${intolerancesName}&instructionsRequired=true&addRecipeInformation=true&fillIngredients=true&sort=random&number=1&apiKey=${apiKey}`);
 
-    console.log(endpoint);
-
-    endpoint.searchParams.set("token", "YOUR_TOKEN_HERE");
-
-    const response = await fetch(endpoint);
-
+    const response = await fetch(url);
     const data = await response.json();
+    var randomNumber = Math.floor(Math.random() * data.number);
 
-    console.log(response);
+    if (data.number > 0)
+    {
+        const randomDish = data.results[randomNumber];
+        console.log('A dish with the specified parameters: ', `${randomDish.title}`)
+    }
+    else
+    {
+        console.log('No dishes meet the specified parameters');
+    }
 
-    console.log('Data: ', data);
-
-    const {id, title, image} = data[0];  id = data[0].id; title = data[0].title 
-
-    console.log(id, title, image);
 }
 
 //getAPICall();
