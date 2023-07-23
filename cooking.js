@@ -104,7 +104,7 @@ function changeIntolerances() {
     dropDownHover(dropDown);
 
 }
-/*
+
 async function randomButton()
 {
     const url = new URL(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisineName}&intolerances=${intolerancesName}&instructionsRequired=true&addRecipeInformation=true&fillIngredients=true&sort=random&number=1&apiKey=${apiKey}`);
@@ -116,7 +116,10 @@ async function randomButton()
     if (data.number > 0)
     {
         const randomDish = data.results[randomNumber];
-        console.log('A dish with the specified parameters: ', `${randomDish.title}`)
+
+        const summary = document.getElementById('dishSummary');
+        summary.innerHTML = `<h2>${randomDish.title}</h2>
+        <p>${randomDish.summary}</p>`;
     }
     else
     {
