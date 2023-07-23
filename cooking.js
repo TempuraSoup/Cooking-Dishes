@@ -107,6 +107,8 @@ function changeIntolerances() {
 
 async function randomButton()
 {
+    window.location.href="next.html";
+
     const url = new URL(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisineName}&intolerances=${intolerancesName}&instructionsRequired=true&addRecipeInformation=true&fillIngredients=true&sort=random&number=1&apiKey=${apiKey}`);
 
     const response = await fetch(url);
@@ -126,6 +128,11 @@ async function randomButton()
         console.log('No dishes meet the specified parameters');
     }
 
+}
+
+function backButton()
+{
+    windoow.location.href="index.html";
 }
 
 //getAPICall();
