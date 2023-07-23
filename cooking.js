@@ -106,7 +106,7 @@ async function randomButton()
         alert('No dishes meet the specified parameters');
     }
 }
-
+    
 
 changeCuisine();
 changeIntolerances();
