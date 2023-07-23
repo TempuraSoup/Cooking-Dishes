@@ -98,7 +98,11 @@ async function randomButton()
 
         const summary = document.getElementById('dishSummary');
         summary.innerHTML = `<h2>${randomDish.title}</h2>
-        <p>${randomDish.summary}</p>`;
+        <p>${randomDish.summary}</p>
+        <img src="${randomDish.image}" alt="Dish Image">`;
+
+        const dishImage = document.getElementById('dishImage');
+        dishImage.innerHTML = `<img ${randomDish.image}>`;
     }
     else
     {
