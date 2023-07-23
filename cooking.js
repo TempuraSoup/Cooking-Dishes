@@ -21,26 +21,23 @@ async function getAPICall() {
 }
 */
 
-function show(a) {
-    const buttonSelect = document.querySelector('.buttonSelector');
+function show(dropDown, a) {
+    const buttonSelect = dropDown.getElementsByClassName('buttonSelector')[0];
     buttonSelect.innerHTML = a;
 }
 
-function dropDownHover() {
-    const dropDownMenu = document.querySelector('.dropdown');
+function dropDownHover(dropDown) {
 
-    dropDownMenu.onmouseover = () => {
-        dropDownMenu.classList.remove('inactive');
-        dropDownMenu.classList.add('active');
+    dropDown.onmouseover = () => {
+        dropDown.classList.add('active');
         console.log('Hovering');
-        console.log(dropDownMenu);
+        console.log(dropDown);
     }
 
-    dropDownMenu.onmouseout = () => {
-        dropDownMenu.classList.remove('active');
-        dropDownMenu.classList.add('inactive');
+    dropDown.onmouseout = () => {
+        dropDown.classList.remove('active');
         console.log('Unhovering');
-        console.log(dropDownMenu);
+        console.log(dropDown);
     }
 }
 
@@ -49,7 +46,9 @@ var cuisineName = 'Default';
 function changeCuisine() {
 
     // DropdownMenu Class
+    const dropDown = document.querySelectorAll('.dropdown')[0];
     const dropDownMenu = document.getElementsByClassName('dropdown-content')[0];
+    console.log(dropDownMenu);
 
     // Get HTMLCollection of Div Content (NOT A USABLE ARRAY)
     const cuisineNames = dropDownMenu.getElementsByTagName('a');
@@ -63,13 +62,17 @@ function changeCuisine() {
     cuisineNamesArr.forEach(name => {
         name.addEventListener("click", () => {
             cuisineName = name.getAttribute('value');
+            show(dropDown, name.getAttribute('value'));
+            dropDown.classList.remove('active');
         })
 
         name.onmouseover = () => {
-            show(name.getAttribute('value'));
+            show(dropDown, name.getAttribute('value'));
         }
     });
     console.log('Cuisine: ', cuisineName);
+
+    dropDownHover(dropDown);
 
 }
 
@@ -77,6 +80,7 @@ function changeCuisine() {
 var intolerancesName = 'Default';
 function changeIntolerances() {
 
+    const dropDown = document.querySelectorAll('.dropdown')[1];
     const dropDownMenu = document.getElementsByClassName('dropdown-content')[1];
     const intolerances = dropDownMenu.getElementsByTagName('a');
     console.log(intolerances);
@@ -86,17 +90,21 @@ function changeIntolerances() {
     intolerancesArr.forEach(name => {
         name.addEventListener("click", () => {
             intolerancesName = name.getAttribute('value');
+            show(dropDown, name.getAttribute('value'));
+            dropDown.classList.remove('active');
         })
 
         name.onmouseover = () => {
-            show(name.getAttribute('value'));
+            show(dropDown, name.getAttribute('value'));
         }
     });
 
     console.log('Intolerances: ', intolerancesName);
 
-}
+    dropDownHover(dropDown);
 
+}
+/*
 async function randomButton()
 {
     const url = new URL(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisineName}&intolerances=${intolerancesName}&instructionsRequired=true&addRecipeInformation=true&fillIngredients=true&sort=random&number=1&apiKey=${apiKey}`);

@@ -5,60 +5,61 @@
     <body>
 
         <h1>Dishes</h1>
+        <div class="selectorContainer">
+            <div class="dropdown">
 
-        <div class="dropdown">
+                <button class="buttonSelector">Choose a cuisine</button>
+                <div class="dropdown-content" onclick=changeCuisine()>
 
-            <button class="buttonSelector">Choose a cuisine</button>
-            <div class="dropdown-content" onclick=changeCuisine()>
-
-                <a value="African">African</a>
-                <a value="American">American</a>
-                <a value="British">British</a>
-                <a value="Cajun">Cajun</a>
-                <a value="Caribbean">Caribbean</a>
-                <a value="Chinese">Chinese</a>
-                <a value="European">European</a>
-                <a value="French">French</a>
-                <a value="German">German</a>
-                <a value="Indian">Indian</a>
-                <a value="Italian">Italian</a>
-                <a value="Japanese">Japanese</a>
-                <a value="Korean">Korean</a>
-                <a value="Mediterranean">Mediterranean</a>
-                <a value="Mexican">Mexican</a>
-                <a value="Thai">Thai</a>
-                <a value="Vietnamese">Vietnamese</a>
+                    <a value="African">African</a>
+                    <a value="American">American</a>
+                    <a value="British">British</a>
+                    <a value="Cajun">Cajun</a>
+                    <a value="Caribbean">Caribbean</a>
+                    <a value="Chinese">Chinese</a>
+                    <a value="European">European</a>
+                    <a value="French">French</a>
+                    <a value="German">German</a>
+                    <a value="Indian">Indian</a>
+                    <a value="Italian">Italian</a>
+                    <a value="Japanese">Japanese</a>
+                    <a value="Korean">Korean</a>
+                    <a value="Mediterranean">Mediterranean</a>
+                    <a value="Mexican">Mexican</a>
+                    <a value="Thai">Thai</a>
+                    <a value="Vietnamese">Vietnamese</a>
+                </div>
             </div>
-        </div>
 
 
-        <div class="dropdown">
+            <div class="dropdown">
 
-            <button>Choose an intolerances</button>
-            <div class="dropdown-content" onclick=changeIntolerances()>
+                <button class="buttonSelector">Choose an intolerances</button>
+                <div class="dropdown-content" onclick=changeIntolerances()>
 
-                <a value="None">None</a>
-                <a value="Dairy">Dairy</a>
-                <a value="Egg">Egg</a>
-                <a value="Gluten">Gluten</a>
-                <a value="Grain">Grain</a>
-                <a value="Peanut">Peanut</a>
-                <a value="Seafood">Seafood</a>
-                <a value="Sesame">Sesame</a>
-                <a value="Shellfish">Shellfish</a>
-                <a value="Soy">Soy</a>
-                <a value="Sulfite">Sulfite</a>
-                <a value="Tree Nut">Tree Nut</a>
-                <a value="Wheat">Wheat</a>
+                    <a value="None">None</a>
+                    <a value="Dairy">Dairy</a>
+                    <a value="Egg">Egg</a>
+                    <a value="Gluten">Gluten</a>
+                    <a value="Grain">Grain</a>
+                    <a value="Peanut">Peanut</a>
+                    <a value="Seafood">Seafood</a>
+                    <a value="Sesame">Sesame</a>
+                    <a value="Shellfish">Shellfish</a>
+                    <a value="Soy">Soy</a>
+                    <a value="Sulfite">Sulfite</a>
+                    <a value="Tree Nut">Tree Nut</a>
+                    <a value="Wheat">Wheat</a>
+                </div>
             </div>
-        </div>
 
         <button class="random-button" onclick="randomButton()">Randomize Dish</button>
 
-        <img src="https://www.chefatlarge.in/wp-content/uploads/2017/01/Fotolia_115262838_Subscription_Monthly_M-1024x709.jpg" alt="dishes1">
-        <img src="https://www.tripfore.com/wp-content/uploads/2020/03/Best-Dishes-in-the-World.jpg" alt="dishes2">
-        <img src="https://livelazul.com/wp-content/uploads/2019/08/8096fdc05cdf7ecb315031e8fa74cead-w2880-b0-1024x819.jpg" alt="dishes3">
-
+        <div class="imagesContainer">
+            <img src="https://www.chefatlarge.in/wp-content/uploads/2017/01/Fotolia_115262838_Subscription_Monthly_M-1024x709.jpg" alt="dishes1">
+            <img src="https://www.tripfore.com/wp-content/uploads/2020/03/Best-Dishes-in-the-World.jpg" alt="dishes2">
+            <img src="https://livelazul.com/wp-content/uploads/2019/08/8096fdc05cdf7ecb315031e8fa74cead-w2880-b0-1024x819.jpg" alt="dishes3">
+        </div>
     </body>
 
     <link rel="stylesheet" href="cooking.css">
