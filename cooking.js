@@ -5,11 +5,10 @@ function show(dropDown, a) {
     buttonSelect.innerHTML = a;
 }
 
-async function dropDownHover(dropDown) {
+function dropDownHover(dropDown) {
 
     const button = dropDown.getElementsByClassName('buttonSelector')[0];
     const dropDownMenu = dropDown.getElementsByClassName('dropdown-content')[0];
-    console.log(button);
 
     button.onmouseover = () => {
         dropDownMenu.classList.add('active');
@@ -32,14 +31,11 @@ function changeCuisine() {
     const dropDown = document.querySelectorAll('.dropdown')[0];
     const dropDownMenu = document.getElementsByClassName('dropdown-content')[0];
     console.log(dropDownMenu);
-
     // Get HTMLCollection of Div Content (NOT A USABLE ARRAY)
     const cuisineNames = dropDownMenu.getElementsByTagName('a');
-    console.log(cuisineNames);
 
     // Convert HTMLCollection into Usable Array of Elements
     const cuisineNamesArr = Array.from(cuisineNames);
-    console.log(cuisineNamesArr);
 
     // Check each div element for if they are clicked
     cuisineNamesArr.forEach(name => {
@@ -53,7 +49,6 @@ function changeCuisine() {
             show(dropDown, name.getAttribute('value'));
         }
     });
-    console.log('Cuisine: ', cuisineName);
 
     dropDownHover(dropDown);
 
@@ -62,13 +57,17 @@ function changeCuisine() {
 var intolerancesName = 'Default';
 function changeIntolerances() {
 
+    // DropdownMenu Class
     const dropDown = document.querySelectorAll('.dropdown')[1];
     const dropDownMenu = document.getElementsByClassName('dropdown-content')[1];
-    const intolerances = dropDownMenu.getElementsByTagName('a');
-    console.log(intolerances);
 
+    // Get HTMLCollection of Div Content (NOT A USABLE ARRAY)
+    const intolerances = dropDownMenu.getElementsByTagName('a');
+
+    // Convert HTMLCollection into Usable Array of Elements
     const intolerancesArr = Array.from(intolerances);
 
+    // Check each div element for if they are clicked
     intolerancesArr.forEach(name => {
         name.addEventListener("click", () => {
             intolerancesName = name.getAttribute('value');
@@ -80,8 +79,6 @@ function changeIntolerances() {
             show(dropDown, name.getAttribute('value'));
         }
     });
-
-    console.log('Intolerances: ', intolerancesName);
 
     dropDownHover(dropDown);
 
@@ -102,23 +99,20 @@ async function randomButton()
         const randomDish = data.results[randomNumber];
 
         const summary = document.getElementById('dishSummary');
-        summary.innerHTML = `<h2>${randomDish.title}</h2>
-        <p>${randomDish.summary}</p>`;
+        summary.innerHTML = `<h2>${title}</h2>
+        <p>${summary}</p>`;
     }
     else
     {
         console.log('No dishes meet the specified parameters');
+        alert('No dishes meet the specified parameters');
     }
-
-    console.log('Hello');
 }
 
 function backButton()
 {
     window.location.href="index.html";
 }
-
-//getAPICall();
 
 changeCuisine();
 changeIntolerances();
