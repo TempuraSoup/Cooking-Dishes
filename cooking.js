@@ -97,8 +97,8 @@ async function randomButton()
         const randomDish = data.results[randomNumber];
 
         const summary = document.getElementById('dishSummary');
-        summary.innerHTML = `<h2>${title}</h2>
-        <p>${summary}</p>`;
+        summary.innerHTML = `<h2>${randomDish.title}</h2>
+        <p>${randomDish.summary}</p>`;
     }
     else
     {
@@ -106,7 +106,6 @@ async function randomButton()
         alert('No dishes meet the specified parameters');
     }
 }
-    
 
 changeCuisine();
 changeIntolerances();
