@@ -78,12 +78,11 @@ h1
     background-color:rgb(247, 225, 198);
 }
 
-.dropdown.active .dropdown-content
+.dropdown-content.active
 {
     visibility: visible;
     opacity: 1; 
 }
-
 
 .dropdown:hover .dropdown-content
 {

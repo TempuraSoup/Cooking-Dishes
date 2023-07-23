@@ -1,43 +1,26 @@
 const apiKey = '4bf05c1072d54fa494b77b3a60dbc035';
-/*
-async function getAPICall() {
-    const endpoint = new URL(`https://api.spoonacular.com/recipes/findByNutrients?minCarbs=10&maxCarbs=50&number=2&apiKey=${apiKey}`);
-
-    console.log(endpoint);
-
-    endpoint.searchParams.set("token", "YOUR_TOKEN_HERE");
-
-    const response = await fetch(endpoint);
-
-    const data = await response.json();
-
-    console.log(response);
-
-    console.log('Data: ', data);
-
-    const {id, title, image} = data[0];  id = data[0].id; title = data[0].title 
-
-    console.log(id, title, image);
-}
-*/
 
 function show(dropDown, a) {
     const buttonSelect = dropDown.getElementsByClassName('buttonSelector')[0];
     buttonSelect.innerHTML = a;
 }
 
-function dropDownHover(dropDown) {
+async function dropDownHover(dropDown) {
 
-    dropDown.onmouseover = () => {
-        dropDown.classList.add('active');
-        console.log('Hovering');
-        console.log(dropDown);
+    const button = dropDown.getElementsByClassName('buttonSelector')[0];
+    const dropDownMenu = dropDown.getElementsByClassName('dropdown-content')[0];
+    console.log(button);
+
+    button.onmouseover = () => {
+        dropDownMenu.classList.add('active');
     }
 
-    dropDown.onmouseout = () => {
-        dropDown.classList.remove('active');
-        console.log('Unhovering');
-        console.log(dropDown);
+    dropDownMenu.onmouseover = () => {
+        dropDownMenu.classList.add('active');
+    }
+
+    dropDownMenu.onmouseout = () => {
+        dropDownMenu.classList.remove('active');
     }
 }
 
@@ -63,7 +46,7 @@ function changeCuisine() {
         name.addEventListener("click", () => {
             cuisineName = name.getAttribute('value');
             show(dropDown, name.getAttribute('value'));
-            dropDown.classList.remove('active');
+            dropDownMenu.classList.remove('active');
         })
 
         name.onmouseover = () => {
@@ -75,7 +58,6 @@ function changeCuisine() {
     dropDownHover(dropDown);
 
 }
-
 
 var intolerancesName = 'Default';
 function changeIntolerances() {
@@ -91,7 +73,7 @@ function changeIntolerances() {
         name.addEventListener("click", () => {
             intolerancesName = name.getAttribute('value');
             show(dropDown, name.getAttribute('value'));
-            dropDown.classList.remove('active');
+            dropDownMenu.classList.remove('active');
         })
 
         name.onmouseover = () => {
@@ -132,7 +114,7 @@ async function randomButton()
 
 function backButton()
 {
-    windoow.location.href="index.html";
+    window.location.href="index.html";
 }
 
 //getAPICall();
