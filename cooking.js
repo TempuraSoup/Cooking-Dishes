@@ -92,8 +92,6 @@ async function randomButton()
     const data = await response.json();
     var randomNumber = Math.floor(Math.random() * data.number);
 
-    window.location.href="next.html";
-
     if (data.number > 0)
     {
         const randomDish = data.results[randomNumber];
@@ -109,10 +107,6 @@ async function randomButton()
     }
 }
 
-function backButton()
-{
-    window.location.href="index.html";
-}
 
 changeCuisine();
 changeIntolerances();
