@@ -30,7 +30,7 @@ function changeCuisine() {
     // DropdownMenu Class
     const dropDown = document.querySelectorAll('.dropdown')[0];
     const dropDownMenu = document.getElementsByClassName('dropdown-content')[0];
-    console.log(dropDownMenu);
+
     // Get HTMLCollection of Div Content (NOT A USABLE ARRAY)
     const cuisineNames = dropDownMenu.getElementsByTagName('a');
 
