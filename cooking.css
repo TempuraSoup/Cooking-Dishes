@@ -40,7 +40,7 @@ h1
 .selectorContainer button:hover
 {
     border-color: purple;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.25vw;
     box-shadow: 0 0 35px;
 }
 
