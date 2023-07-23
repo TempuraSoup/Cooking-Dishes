@@ -21,20 +21,27 @@ h1
     align-items: center;
     justify-content: center;
     margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
 }
 
 .selectorContainer button
 {
     background-color:#e7e1cb;
     margin-left: 10%;
-    width: 100%;
-    min-width: 150px;
-    width: 300px;
-    height: 75px;
+    min-width: 20vw;
+    width: 20vw;
+    height: 8vh;
     border-radius: 27px;
+    border-width: 3px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 2.5vh;
+}
+
+.selectorContainer button:hover
+{
+    border-color: purple;
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px;
 }
 
 .selectorContainer .random-button
@@ -53,7 +60,6 @@ h1
 {
     display: inline-block;
     position: relative;
-    margin: 10px;
     z-index: 3;
 }
 
@@ -61,8 +67,8 @@ h1
 {
     display: none;
     position: absolute;
-    width: 85%;
-    margin-left: 31.5px;
+    width: 80%;
+    margin-left: 3vw;
     overflow: hidden;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0.2);
     border-radius: 10px;
@@ -110,7 +116,7 @@ h1
 .dropdown .buttonSelector
 {
     display: inline-block;
-    margin: 30px;
+    margin: 5vw;
     background-color: peachpuff;
 }
 
@@ -119,6 +125,7 @@ h1
     display: flex;
     overflow: hidden;
     z-index: -1;
+    justify-content: space-evenly;
 }
 
 img
@@ -127,6 +134,5 @@ img
     display: block;
     width: 30%;
     height: 90%;
-    margin-right: 10vh;
     z-index: inherit;
 }
